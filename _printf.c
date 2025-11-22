@@ -46,7 +46,7 @@ int _printf(const char *format, ...)
 					char *str = va_arg(args, char*);
 					if (str == NULL)
 					{
-						write(1, '\0', 1);
+						write(1, "(null)", 6);
 						printed++;
 						break;
 					}
