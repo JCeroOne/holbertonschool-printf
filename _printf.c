@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 				isFormat = 1;
 			else
 			{
-				write(1, *format, 1);
+				write(1, format, 1);
 				printed++;
 			}
 		}
@@ -37,7 +37,7 @@ int _printf(const char *format, ...)
 				case 'c':
 				{
 					int ch = va_arg(args, int);
-					write(1, ch, 1);
+					write(1, *ch, 1);
 					printed++;	
 					break;
 				}
@@ -46,14 +46,15 @@ int _printf(const char *format, ...)
 					char *str = va_arg(args, char*);
 					while(*str != '\0')
 					{
-						write(1, *str, 1);
+						write(1, str, 1);
 						printed++;
+						str++;
 					}
 					break;
 				}
 				default:
 				{
-					write(1, *format, 1);
+					write(1, format, 1);
 					printed++;
 				}
 			}
