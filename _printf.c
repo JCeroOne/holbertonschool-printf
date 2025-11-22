@@ -47,7 +47,7 @@ int _printf(const char *format, ...)
 					if (str == NULL)
 					{
 						write(1, "(null)", 6);
-						printed++;
+						printed += 6;
 						break;
 					}
 					while (*str != '\0')
