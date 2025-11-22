@@ -15,7 +15,6 @@ int _printf(const char *format, ...)
 	va_list args;
 	int printed = 0;
 	int isFormat = 0;
-	int nextArg = 0;
 
 	va_start(args, format);
 	while (*format != '\0')
@@ -35,14 +34,14 @@ int _printf(const char *format, ...)
 			isFormat = 0;
 			switch(*format)
 			{
-				case 'c'
+				case 'c':
 				{
-					char ch = va_arg(args, char);
+					int ch = va_arg(args, int);
 					write(1, ch, 1);
 					printed++;	
 					break;
 				}
-				case 's'
+				case 's':
 				{
 					char *str = va_arg(args, char*);
 					while(*str != '\0')
@@ -52,7 +51,7 @@ int _printf(const char *format, ...)
 					}
 					break;
 				}
-				default
+				default:
 				{
 					write(1, *format, 1);
 					printed++;
