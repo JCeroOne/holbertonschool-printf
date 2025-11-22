@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	while (*format != '\0')
 	{
-		if (!isFormat)
+		if (isFormat == 0)
 		{
 			if (*format == '%')
 				isFormat = 1;
@@ -31,6 +31,7 @@ int _printf(const char *format, ...)
 		}
 		else
 		{
+			isFormat = 0;
 			switch(*format)
 			{
 				case 'c'
