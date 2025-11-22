@@ -44,12 +44,15 @@ int _printf(const char *format, ...)
 				case 's':
 				{
 					char *str = va_arg(args, char*);
+					if (str == NULL)
+					{
+						write(1, '\0', 1);
+						printed++;
+						break;
+					}
 					while (*str != '\0')
 					{
-						if (*str == NULL)
-							write(1, '\0', 1);
-						else
-							write(1, str, 1);
+						write(1, str, 1);
 						printed++;
 						str++;
 					}
