@@ -58,6 +58,8 @@ int _printf(const char *format, ...)
 					}
 					break;
 				}
+				case '\0':
+					break;
 				default:
 				{
 					write(1, format, 1);
