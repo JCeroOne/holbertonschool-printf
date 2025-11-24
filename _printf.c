@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 				case 'd':
 				{
 					char *ptr = malloc(sizeof(char) * 100);
-					double num = va_arg(args, double);
+					float num = va_arg(args, float);
 					int i;
 					sprintf(ptr, "%d", num);
 					for (i = 0; ptr[i]; i++)
