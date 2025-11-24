@@ -63,12 +63,12 @@ int _printf(const char *format, ...)
 				{
 					char *ptr = malloc(sizeof(char) * 100);
 					double num = va_arg(args, double);
+					int i;
 					sprintf(ptr, "%d", num);
-					while (*ptr != '\0')
+					for (i = 0; ptr[i]; i++)
 					{
 						write(1, ptr, 1);
 						printed++;
-						ptr++;
 					}
 					free(ptr);
 					break;
@@ -77,12 +77,12 @@ int _printf(const char *format, ...)
 				{
 					char *ptr = malloc(sizeof(char) * 100);
 					int num = va_arg(args, int);
+					int i;
 					sprintf(ptr, "%i", num);
-					while (*ptr != '\0')
+					for (i = 0; ptr[i]; i++)
 					{
 						write(1, ptr, 1);
 						printed++;
-						ptr++;
 					}
 					free(ptr);
 					break;
