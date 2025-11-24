@@ -67,7 +67,7 @@ int _printf(const char *format, ...)
 					sprintf(ptr, "%d", num);
 					for (i = 0; ptr[i]; i++)
 					{
-						write(1, ptr, 1);
+						write(1, ptr + i, 1);
 						printed++;
 					}
 					free(ptr);
@@ -81,7 +81,7 @@ int _printf(const char *format, ...)
 					sprintf(ptr, "%i", num);
 					for (i = 0; ptr[i]; i++)
 					{
-						write(1, ptr, 1);
+						write(1, ptr + i, 1);
 						printed++;
 					}
 					free(ptr);
