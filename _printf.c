@@ -58,6 +58,33 @@ int _printf(const char *format, ...)
 					}
 					break;
 				}
+				case 'd':
+				{
+					char *ptr = malloc(sizeof(char) * 100);
+					double num = va_arg(args, double);
+					sprintf(ptr, "%d", num);
+					while (*ptr != '\0')
+					{
+						write(1, ptr, 1);
+						printed++;
+						ptr++;
+					}
+					free(ptr);
+				}
+				case 'i':
+				{
+					char *ptr = malloc(sizeof(char) * 100);
+					int num = va_arg(args, int);
+					sprintf(ptr, "%i", num);
+					while (*ptr != '\0')
+					{
+						write(1, ptr, 1);
+						printed++;
+						ptr++;
+					}
+					free(ptr);
+
+				}
 				case '\0':
 					break;
 				default:
