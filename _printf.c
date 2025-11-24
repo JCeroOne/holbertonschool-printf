@@ -65,6 +65,7 @@ int _printf(const char *format, ...)
 					double num = va_arg(args, double);
 					int i;
 					sprintf(ptr, "%d", num);
+					printf("%s", ptr);
 					for (i = 0; ptr[i] != '\0'; i++)
 					{
 						write(1, ptr + i, 1);
