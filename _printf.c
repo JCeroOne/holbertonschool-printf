@@ -65,7 +65,6 @@ int _printf(const char *format, ...)
 					int num = va_arg(args, int);
 					int i;
 					sprintf(ptr, "%d", num);
-					printf("%s", ptr);
 					for (i = 0; ptr[i]; i++)
 					{
 						write(1, ptr + i, 1);
