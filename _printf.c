@@ -62,6 +62,11 @@ int _printf(const char *format, ...)
 				case 'd':
 				{
 					char *ptr = malloc(sizeof(char) * 100);
+					if(ptr == NULL)
+					{
+						printf("Malloc fail");
+						return (-1);
+					}
 					int num = va_arg(args, int);
 					int i;
 					sprintf(ptr, "%d", num);
@@ -76,6 +81,11 @@ int _printf(const char *format, ...)
 				case 'i':
 				{
 					char *ptr = malloc(sizeof(char) * 100);
+					if (ptr == NULL)
+					{
+						printf("Malloc fail");
+						return (-1);
+					}
 					int num = va_arg(args, int);
 					int i;
 					sprintf(ptr, "%i", num);
