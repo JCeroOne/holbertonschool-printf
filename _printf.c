@@ -71,6 +71,7 @@ int _printf(const char *format, ...)
 						ptr++;
 					}
 					free(ptr);
+					break;
 				}
 				case 'i':
 				{
@@ -84,6 +85,7 @@ int _printf(const char *format, ...)
 						ptr++;
 					}
 					free(ptr);
+					break;
 
 				}
 				case '\0':
